@@ -1,13 +1,16 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VersionnComponent } from './version';
+import { Md5Service } from './md5';
 
-@NgModule({
-    declarations: [
-        VersionnComponent
-    ],
-    imports: [ CommonModule ],
-    exports: [],
-    providers: [],
-})
-export class AppModule {}
+@NgModule({})
+export class Md5Module {
+    public static forRoot(): ModuleWithProviders{
+        return {
+            ngModule: Md5Module,
+            providers: [
+                Md5Service
+            ]
+        }
+    }
+}
+export { Md5Service } from './md5';

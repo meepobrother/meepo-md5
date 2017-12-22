@@ -26,7 +26,7 @@
         "annotateForClosureCompiler": true,
         "strictMetadataEmit": true,
         "flatModuleOutFile": "index.js",
-        "flatModuleId": "meepo-core",
+        "flatModuleId": "meepo-md5",
         "skipTemplateCodegen": true
     },
     "exclude": [
