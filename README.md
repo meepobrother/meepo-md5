@@ -1,60 +1,31 @@
-## imeepos angular template
+# md5 for angular service
 
-```sh
-git remote add origin https://github.com/meepobrother/imeepos-ng-template.git
-git push -u origin master
-```
+- [md5](https://github.com/blueimp/JavaScript-MD5)
 
-
-### 用法
-
-```sh
-git clone https://github.com/meepobrother/imeepos-ng-template.git my-app
-cd my-app
-yarn 
-// 或者
-npm install
-```
-
-### 发布包到npm
 
 ```ts
-// 删除mac自带后缀文件
-find ./ -name ".DS_Store" | xargs rm -rf
-// 1: 更改package.json中的name为要发布的名字
-npm run build && npm publish
-```
+import { Md5Module } from 'meepo-md5';
+@NgModule({
+  imports: [
+    Md5Module.forRoot()
+  ]
+})
+export class AppModule { }
 
-### 使用发布的包
 
-```ts
-npm install --save 包名
 ```
 
 
 ```ts
-import { 模块 } from {包名}
-```
+import { Md5Service } from 'meepo-md5';
 
-```ts
-"rollup": "^0.43.0",
-"rollup-plugin-commonjs": "^8.0.2",
-"rollup-plugin-includepaths": "0.2.2",
-"rollup-plugin-node-resolve": "^3.0.0"
-```
-
-- demo演示
-
-```
-yarn demo
-```
-
-- 后台相关
-```ts
-// 启动后台服务
-yarn server
-// 重启后台服务
-yarn reload
-// 清除进程
-yarn delete
+export class AppComponent implements OnInit {
+  title = 'app';
+  constructor(
+    public md5: Md5Service
+  ) {}
+  ngOnInit(){
+    console.log(this.md5.md5('value'));
+  }
+}
 ```

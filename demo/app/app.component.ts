@@ -12,5 +12,7 @@ export class AppComponent implements OnInit {
   constructor(
     public md5: Md5Service
   ) {}
-  ngOnInit(){}
+  ngOnInit(){
+    console.log(this.md5.md5('value'));
+  }
 }

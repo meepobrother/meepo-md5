@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import * as md5 from 'blueimp-md5';
+declare const require: any;
+const md5 = require('blueimp-md5');
 @Injectable()
 export class Md5Service {
 
-    constructor() {
-        console.log(md5);
-    }
+    constructor() { }
 
-    md5(s: string) {
-
+    md5(s: string, key?: string, isRow?: boolean): string {
+        return md5(s, key, isRow);
     }
 }
